@@ -176,7 +176,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/28/welcome/" class="post-title-link" itemprop="url">欢迎光临我的博客</a>
+            <a href="/2020/06/28/welcome/" class="post-title-link" itemprop="url">欢迎光临</a>
         </h2>
 
         <div class="post-meta">
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-17 13:41:45" itemprop="dateModified" datetime="2020-08-17T13:41:45+08:00">2020-08-17</time>
+                <time title="修改时间：2021-07-21 14:17:07" itemprop="dateModified" datetime="2021-07-21T14:17:07+08:00">2021-07-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -219,7 +219,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>344</span>
+              <span>296</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -241,7 +241,8 @@
           <p>欢迎光临我的博客～</p>
 <center>
   <img style="margin-bottom: 15px" src="http://pic.fishiu.com/ipic/jbdhu.jpg">
-  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">在猫咖拍了一万张超爱的照骗～</div></center>
+  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">猫咖拍的可爱照骗～</div></center>
+
 
 
 
@@ -272,7 +273,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/23/gtdapp-thoughts/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/23/karabiner/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -286,7 +287,108 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/23/gtdapp-thoughts/" class="post-title-link" itemprop="url">gtdapp-thoughts</a>
+            <a href="/2021/08/23/karabiner/" class="post-title-link" itemprop="url">Karabiner小教程</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-23 12:09:00 / 修改时间：12:09:55" itemprop="dateCreated datePublished" datetime="2021-08-23T12:09:00+08:00">2021-08-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Geek/" itemprop="url" rel="index"><span itemprop="name">Geek</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Geek/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Karabiner小教程"><a href="#Karabiner小教程" class="headerlink" title="Karabiner小教程"></a>Karabiner小教程</h1><p>首先找到Karabiner的配置文件夹</p>
+<p>方法一：从软件进入，在Misc标签页下点击 Open config folder</p>
+<p><img src="http://pic.fishiu.com/uPic/lGCVR4.png" alt="lGCVR4.png"></p>
+<p>方法二：直接通过访达进入目录</p>
+<p>在访达菜单栏的<code>前往</code>中选择<code>前往文件夹</code>，或者直接快捷键<code>Command + Shift + G</code>，弹出的窗口中输入路径<code>~/.config/karabiner</code>，回车</p>
+<hr>
+<p>然后使用文本编辑器创建一个json文件用来存放映射规则，比如叫<code>window_control.json</code>，存放在桌面或任意地方，文件中的内容如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"title"</span>: <span class="string">"Window Control"</span>,</span><br><span class="line">    <span class="attr">"rules"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"description"</span>: <span class="string">"Change Insert to Window Switch (Different Apps)"</span>,</span><br><span class="line">            <span class="attr">"manipulators"</span>: [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">"type"</span>: <span class="string">"basic"</span>,</span><br><span class="line">                    <span class="attr">"from"</span>: &#123;</span><br><span class="line">                        <span class="attr">"key_code"</span>: <span class="string">"insert"</span>,</span><br><span class="line">                        <span class="attr">"modifiers"</span>: &#123;</span><br><span class="line">                            <span class="attr">"optional"</span>: [<span class="string">"any"</span>]</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">"to"</span>: [</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="attr">"key_code"</span>: <span class="string">"tab"</span>,</span><br><span class="line">                            <span class="attr">"modifiers"</span>: [</span><br><span class="line">                                <span class="string">"left_command"</span></span><br><span class="line">                            ]</span><br><span class="line">                        &#125;</span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"description"</span>: <span class="string">"Change Insert to Window Switch (Same Apps)"</span>,</span><br><span class="line">            <span class="attr">"manipulators"</span>: [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">"type"</span>: <span class="string">"basic"</span>,</span><br><span class="line">                    <span class="attr">"from"</span>: &#123;</span><br><span class="line">                        <span class="attr">"key_code"</span>: <span class="string">"delete_forward"</span>,</span><br><span class="line">                        <span class="attr">"modifiers"</span>: &#123;</span><br><span class="line">                            <span class="attr">"optional"</span>: [<span class="string">"any"</span>]</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">"to"</span>: [</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="attr">"key_code"</span>: <span class="string">"grave_accent_and_tilde"</span>,</span><br><span class="line">                            <span class="attr">"modifiers"</span>: [</span><br><span class="line">                                <span class="string">"left_command"</span></span><br><span class="line">                            ]</span><br><span class="line">                        &#125;</span><br><span class="line">                    ]</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将文件拖入刚才的配置文件夹中的子文件夹<code>assets/complex_modifications</code>（如果咩有的话，就手动创建一下），如图</p>
+<p><img src="http://pic.fishiu.com/uPic/vXJVzH.png" alt="vXJVzH.png"></p>
+<hr>
+<p>下一步就是去软件中让这条新增的规则生效，打开<code>Complex modifications</code>标签</p>
+<p><img src="http://pic.fishiu.com/uPic/ALikFF.png" alt="image-20210823120622061"></p>
+<p>添加完规则，大功告成</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/21/appleid-disactivated/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="金笑缘">
+      <meta itemprop="description" content="想在这里平静地讲好自己的故事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fishiu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/21/appleid-disactivated/" class="post-title-link" itemprop="url">appleid-disactivated</a>
         </h2>
 
         <div class="post-meta">
@@ -297,7 +399,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-02-23 23:28:40" itemprop="dateCreated datePublished" datetime="2021-02-23T23:28:40+08:00">2021-02-23</time>
+              <time title="创建时间：2021-07-21 14:21:44" itemprop="dateCreated datePublished" datetime="2021-07-21T14:21:44+08:00">2021-07-21</time>
             </span>
 
           <br>
@@ -376,7 +478,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-23 23:32:09" itemprop="dateModified" datetime="2021-02-23T23:32:09+08:00">2021-02-23</time>
+                <time title="修改时间：2021-07-21 14:17:07" itemprop="dateModified" datetime="2021-07-21T14:17:07+08:00">2021-07-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -421,7 +523,7 @@
 <p>托福考位太难抢了，不想一遍遍手动刷新。</p>
 </blockquote>
 <center>
-  <img style="margin-bottom: 15px" src="http://pic.fishiu.com/uPic/kKKM4p.jpeg" style="zoom:33%;">
+  <div><img style="margin-bottom: 15px" src="http://pic.fishiu.com/uPic/kKKM4p.jpeg" width="50%" height="50%"></div>
   <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">想安静地做一条咸鱼</div></center>
           <!--noindex-->
             <div class="post-button">
@@ -481,7 +583,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-06 00:05:09" itemprop="dateModified" datetime="2020-08-06T00:05:09+08:00">2020-08-06</time>
+                <time title="修改时间：2021-07-21 14:17:07" itemprop="dateModified" datetime="2021-07-21T14:17:07+08:00">2021-07-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -526,14 +628,14 @@
 <p>电子书的正确打开方式：</p>
 <p>图书馆联盟找书 =&gt; Acrobat可搜索化 =&gt; 书签制作</p>
 </blockquote>
-<p>简单介绍一下（扫描版）电子书的书签制作过程，之前一直觉得非常困难，所以总是找现成的。终于，语概期末开卷考试形势所迫下研究了一下，其实并不复杂。熟练之后大约每本书5分钟搞定。</p>
-<p>所需软件/工具/资源：</p>
-<ul>
-<li>电子书目录：主要从出版社和图书商城寻找</li>
-<li>PDF-BookMark：把目录写入PDF</li>
-<li>文本编辑器 &amp; 正则表达式：用于处理目录</li>
-</ul>
-<h2 id="第一步-寻找电子书目录"><a href="#第一步-寻找电子书目录" class="headerlink" title="第一步 寻找电子书目录"></a>第一步 寻找电子书目录</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/05/pdf-bookmark/" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -691,7 +793,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-23 13:45:17" itemprop="dateModified" datetime="2020-07-23T13:45:17+08:00">2020-07-23</time>
+                <time title="修改时间：2021-07-21 14:17:07" itemprop="dateModified" datetime="2021-07-21T14:17:07+08:00">2021-07-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -713,7 +815,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>895</span>
+              <span>935</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -732,8 +834,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
+          <p>一个不太成熟的作品集～</p>
+<blockquote>
 <p>这篇文章是关于一些目前经历过的项目中，我参与设计部分的设计效果展示</p>
+<p>「其实是为了面一个产品岗，面试老师说要看看设计的作品集。」</p>
 </blockquote>
 <center>
   <img style="margin-bottom: 15px" src="http://pic.fishiu.com/ipic/cbvao.jpg"><br>
@@ -828,7 +932,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -841,7 +945,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
