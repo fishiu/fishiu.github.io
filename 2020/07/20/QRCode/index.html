@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 6.1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/fish.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/fish.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/fish.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://pic.fishiu.com/ipic/hnfp2.jpg">
 <meta property="og:image" content="http://pic.fishiu.com/ipic/g0361.jpg">
 <meta property="og:image" content="http://pic.fishiu.com/ipic/umr32.jpg">
-<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/boQuhickLvaNPmOwhaDoAQ2vXNxKlxe51ueLCNUTO4qAp45Cic96CfnldNQuk5via0WlGhicRppBicHOUG1DOPzUMrA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/boQuhickLvaNPmOwhaDoAQ2vXNxKlxe51ueLCNUTO4qAp45Cic96CfnldNQuk5via0WlGhicRppBicHOUG1DOPzUMrA/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1">
 <meta property="article:published_time" content="2020-07-20T03:07:00.000Z">
 <meta property="article:modified_time" content="2021-12-23T11:30:57.404Z">
 <meta property="article:author" content="Xiaoyuan Jin">
@@ -260,10 +260,9 @@
 <center>
   <img style="margin-bottom: 15px" src="http://pic.fishiu.com/ipic/0l2w2.png">
   <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">图片源自 pixabay</div></center>
-
-<a id="more"></a>
-
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>使用设计软件，比如第九工场，草料二维码（欢迎这两家网站给我广告费）等等。</p>
+<span id="more"></span>
+<h2 id="方法一"><a class="markdownIt-Anchor" href="#方法一"></a> 方法一</h2>
+<p>使用设计软件，比如第九工场，草料二维码（欢迎这两家网站给我广告费）等等。</p>
 <p>优点：傻瓜式操作</p>
 <ul>
 <li>挑选你想要使用的模板-&gt;上传你想要美化的二维码-&gt;下载美化完的二维码</li>
@@ -274,7 +273,8 @@
 <li>自定义水平很低，无法修改；</li>
 <li>高质量模板较少，容易“撞码”；</li>
 </ul>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>自己动手丰衣足食。</p>
+<h2 id="方法二"><a class="markdownIt-Anchor" href="#方法二"></a> 方法二</h2>
+<p>自己动手丰衣足食。</p>
 <p>优点：</p>
 <ul>
 <li>自定义程度强，只要能识别怎么设计都行；</li>
@@ -287,20 +287,21 @@
 <li>耗费大量的时间；</li>
 <li>重复工作容易造成眼睛疲劳、精神崩溃等……</li>
 </ul>
-<h2 id="二维码简单原理"><a href="#二维码简单原理" class="headerlink" title="二维码简单原理"></a>二维码简单原理</h2><p>二维码有很多种，但我们最常用的二维码就是QR Code，它最显著的特征就是二维码三个角上的回字，它是QR Code的特征标识，也被称为“码眼”。除去码眼，还有一些标志信息（版本号，采用编码类型，纠错等级等），剩下的地方就是存放信息的二进制数据，而且是加载过纠错算法的数据（这也是污损的二维码还能扫描出来的原因）。</p>
+<h2 id="二维码简单原理"><a class="markdownIt-Anchor" href="#二维码简单原理"></a> 二维码简单原理</h2>
+<p>二维码有很多种，但我们最常用的二维码就是QR Code，它最显著的特征就是二维码三个角上的回字，它是QR Code的特征标识，也被称为“码眼”。除去码眼，还有一些标志信息（版本号，采用编码类型，纠错等级等），剩下的地方就是存放信息的二进制数据，而且是加载过纠错算法的数据（这也是污损的二维码还能扫描出来的原因）。</p>
 <center>
   <img style="margin-bottom: 0px" src="http://pic.fishiu.com/ipic/snvb4.jpg">
   <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px; margin-bottom: 20px">
   二维码的各种组成部分
   </div>
 </center>
-
 <p>简单来说，二维码就是通过黑白方块来识别的“二进制”码。黑的地方就该是黑，白的地方就该是白，那为什么我们还有美化/丑化的空间呢？</p>
 <ol>
 <li>颜色：并非完全要求黑白，只要颜色的深浅（RGB数值）相对关系对即可。</li>
 <li>空间：事实上，以每个小方块中心为圆心，直径为小方块边长20%～30%的圆形才是真正的识别区域，也就是如果每个小方块是10像素，那么只要中心2～3像素是符合原码的黑白排列即可。</li>
 </ol>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><p>接下来就可以在Illustrator中进行创作了：</p>
+<h2 id="具体操作"><a class="markdownIt-Anchor" href="#具体操作"></a> 具体操作</h2>
+<p>接下来就可以在Illustrator中进行创作了：</p>
 <p>首先我们要获得一个可编辑的二维码，我是在草料二维码上下载的，过程如图，注意容错率越高码越大，可编辑的内容也越多，也越累……我选择了15%容错率，也就是一共有35*35=1225个格子！注意下载SVG格式，方便在Illustrator中进行编辑。</p>
 <table>
   <tr>
@@ -404,41 +405,34 @@
     </td>
   </tr>
 </table>
-
-
 <p>打开SVG文件，先调整一下大小，我把每个小方块调成了12像素（注意在设置中将全局单位改为像素，不然厘米等单位的看着实在难受），然后降低透明度为20%。</p>
-<p><img src="http://pic.fishiu.com/ipic/yiy13.jpg" alt="img"></p>
+<p><img src="http://pic.fishiu.com/ipic/yiy13.jpg" alt="img" /></p>
 <p>再打开软件的网格，首先 Ctrl+K 打开设置，修改网格设置：如果我每个方块是12px的话，网格间距就选为12，次分割线我选择2，这样每12px都被分为两半能看到每个方格的中心点，更细致一些。接着按 Ctrl+’ 显示网格线。</p>
-<p><img src="http://pic.fishiu.com/ipic/9v7km.jpg" alt="img"></p>
+<p><img src="http://pic.fishiu.com/ipic/9v7km.jpg" alt="img" /></p>
 <p>准备工作完成，接下来你只需要确保“黑格子”中心2～3像素是黑色（深色），“白格子”中心2～3像素是白色（浅色）即可，发挥空间非常大。</p>
-<p><img src="http://pic.fishiu.com/ipic/f2uu2.jpg" alt="img"></p>
-<p>具体设计过程可以参考这篇推文，他还打了小圆点做参考：<a href="http://mp.weixin.qq.com/s?__biz=MzI0ODMzMzY4Mg==&mid=2247484232&idx=1&sn=81cfe7b3332070c7e6a42a24b2ccc3d3&chksm=e9a31755ded49e430664e3b3f0aada858983ca79e1baca5377e23c2a434935d1413c283ac89d&scene=21#wechat_redirect" target="_blank" rel="noopener">【教程】如何制作二维码</a></p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>再谈谈我这次用的这个二维码：第一次尝试了手工设计，走了极简风——反白二维码。</p>
-<p><img src="http://pic.fishiu.com/ipic/3iyh4.jpg" alt="img"></p>
+<p><img src="http://pic.fishiu.com/ipic/f2uu2.jpg" alt="img" /></p>
+<p>具体设计过程可以参考这篇推文，他还打了小圆点做参考：<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0ODMzMzY4Mg==&amp;mid=2247484232&amp;idx=1&amp;sn=81cfe7b3332070c7e6a42a24b2ccc3d3&amp;chksm=e9a31755ded49e430664e3b3f0aada858983ca79e1baca5377e23c2a434935d1413c283ac89d&amp;scene=21#wechat_redirect">【教程】如何制作二维码</a></p>
+<h2 id="实例"><a class="markdownIt-Anchor" href="#实例"></a> 实例</h2>
+<p>再谈谈我这次用的这个二维码：第一次尝试了手工设计，走了极简风——反白二维码。</p>
+<p><img src="http://pic.fishiu.com/ipic/3iyh4.jpg" alt="img" /></p>
 <p>也许你已经发现，这个二维码跟平常所见的不太一样：没错，这是一个反白二维码（什么是反白？？一般来说我们是把黑色的二维码放在白色的背景上，而现在我是想把白色的二维码放在黑色的背景上，这就叫反白）。</p>
 <p>简单来说，反白就是在深色背景上，放浅色的二维码（最标准的二维码是以黑色即深色为主色，白色即浅色为背景色的）。以鄙人之见，反白的二维码应用场景更广泛，因为浅色背景放深色二维码显得突兀，而深色背景放浅色二维码则比较温和。</p>
 <p>市面上常见的艺术二维码（即：好看的二维码？）都是在原码黑色区域作图，使得做好的图覆盖黑色区域而不覆盖白色区域，但如果你了解了二维码原理，你会发现把一个二维码反白化不是一件简单的事情。并不是随便找个工具把二维码黑白色反转就行了，因为二维码识别是靠黑白的绝对关系，而不是相对关系。</p>
 <p>因此要制作反白艺术二维码需要对所有白色块区域进行编辑，而把深色区域空下来，这样填入深色图片时才能形成正确的排列。</p>
 <p>我这里为了简洁就只用圆角矩形来填充了，制作的时候可以把会用到的不同长度的矩形元素现在边上放起来，然后按住alt拖动复制，注意对其参考线。</p>
-<p><img src="http://pic.fishiu.com/ipic/hnfp2.jpg" alt="img"></p>
+<p><img src="http://pic.fishiu.com/ipic/hnfp2.jpg" alt="img" /></p>
 <p>经过漫长的填充，反白二维码就完成了。</p>
 <center>
   <img style="margin-bottom: 0px" src="http://pic.fishiu.com/ipic/g0361.jpg">
   <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">完成图，请忽略颜色</div></center>
-
-
-
 <p>随便找一张美图，感觉都是挺不错的，注意要把二维码的颜色调整好，跟背景有一定的深浅对比。</p>
 <center>
   <img style="border-radius: 5px; margin-bottom: 15px" src="http://pic.fishiu.com/ipic/umr32.jpg">
   <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">如果很闲又不怕折腾的话就试试吧～</div></center>
-
-
-
 <p>参考资料：</p>
-<p><a href="https://coolshell.cn/articles/10590.html" target="_blank" rel="noopener">【二维码的生成细节和原理】</a></p>
-<p><a href="http://mp.weixin.qq.com/s?__biz=MzI0ODMzMzY4Mg==&mid=2247484232&idx=1&sn=81cfe7b3332070c7e6a42a24b2ccc3d3&chksm=e9a31755ded49e430664e3b3f0aada858983ca79e1baca5377e23c2a434935d1413c283ac89d&scene=21#wechat_redirect" target="_blank" rel="noopener">【教程】如何制作二维码</a></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/boQuhickLvaNPmOwhaDoAQ2vXNxKlxe51ueLCNUTO4qAp45Cic96CfnldNQuk5via0WlGhicRppBicHOUG1DOPzUMrA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://coolshell.cn/articles/10590.html">【二维码的生成细节和原理】</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzI0ODMzMzY4Mg==&amp;mid=2247484232&amp;idx=1&amp;sn=81cfe7b3332070c7e6a42a24b2ccc3d3&amp;chksm=e9a31755ded49e430664e3b3f0aada858983ca79e1baca5377e23c2a434935d1413c283ac89d&amp;scene=21#wechat_redirect">【教程】如何制作二维码</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/boQuhickLvaNPmOwhaDoAQ2vXNxKlxe51ueLCNUTO4qAp45Cic96CfnldNQuk5via0WlGhicRppBicHOUG1DOPzUMrA/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" /></p>
 
     </div>
 
@@ -525,7 +519,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一"><span class="nav-number">1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二"><span class="nav-number">2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维码简单原理"><span class="nav-number">3.</span> <span class="nav-text">二维码简单原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体操作"><span class="nav-number">4.</span> <span class="nav-text">具体操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">5.</span> <span class="nav-text">实例</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text"> 方法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text"> 方法二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%AE%80%E5%8D%95%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text"> 二维码简单原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text"> 具体操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text"> 实例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -650,6 +644,8 @@
 
 
 
+
+  
 
   
 
