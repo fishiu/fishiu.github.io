@@ -299,7 +299,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-03-27 14:00:00 / Modified: 13:25:37" itemprop="dateCreated datePublished" datetime="2022-03-27T14:00:00+08:00">2022-03-27</time>
+              <time title="Created: 2022-03-27 14:00:00 / Modified: 13:32:35" itemprop="dateCreated datePublished" datetime="2022-03-27T14:00:00+08:00">2022-03-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -340,7 +340,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Techniques-All-You-Need"><a href="#Techniques-All-You-Need" class="headerlink" title="Techniques All You Need"></a>Techniques All You Need</h1><p>趁着组会分享的机会，简单梳理一下我作为一个信管的精神信科人，是怎么理解和学习“技术”的。</p>
+          <p>趁着组会分享的机会，简单梳理一下我作为一个信管的精神信科人，是怎么理解和学习“技术”的。</p>
 <blockquote>
 <p>免责声明：本人在技术上也仅是入门水平，见过太多外院系的技术大佬如化院的小白兔（树洞、刷课机等开发者）等，我自知对于系统开发亦或是机器学习的掌握和实践程度都是白菜级的。但是作为一个不怕折腾且自认为擅长收集信息的三脚猫，我希望能分享我在“技术”领域探索、折腾的一些经验。</p>
 <p>这次分享希望能帮助大家了解三个方面：</p>
@@ -351,204 +351,14 @@
 </ul>
 </blockquote>
 <p>本文默认读者大一水平，如语气嚣张还请谅解。第一次写技术分享，欢迎各位拍砖。</p>
-<h2 id="信管同学可能需要哪些技术"><a href="#信管同学可能需要哪些技术" class="headerlink" title="信管同学可能需要哪些技术"></a>信管同学可能需要哪些技术</h2><p>什么是技术，这个问题让我愣住了，技术的对面是什么，是人文吗？我突然想到了大一时学到的那张图：信息世界的三个圆圈，分别是用户、信息、技术。在这个框架下大概就方便能理解什么是技术了，技术可以是处理信息，帮助用户与信息交互的“信息技术”了。</p>
-<p>我认为要学的东西可以从信科的内容里做减法，信管（或者更具体的，文本挖掘）可以减掉硬件技术、系统技术、离散数学等内容，剩下的我觉得可以分成三类：编程语言、机器学习、大数据技术。当然还有个其他类别反而是最想讲的，是一些课程一般不上但是非常实用的技术。</p>
-<h3 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h3><blockquote>
-<p>很多时候技术听起来等价于编程。编程语言只是编程的一部分，是入门阶段最重要的一部分。掌握编程语言意味着可以用编程来帮助学习、科研、生活自动化，打开了5分钟Coding一小时Debuging的世界。</p>
-<p>其实我觉得编程语言是很好学的，分支循环哪怕是面向对象也能快速上手。真正的精通还是得靠大量的实践，通过颠覆性技术的项目我第一次学会了Flask后端框架，SqlAlchemy数据库框架，Redis缓存数据库，Xpah，鲁棒的爬虫等…… 正所谓你永远不知道你需要学什么，直到Bug发生了。</p>
-</blockquote>
-<h4 id="Python：数据分析-机器学习"><a href="#Python：数据分析-机器学习" class="headerlink" title="Python：数据分析+机器学习"></a>Python：数据分析+机器学习</h4><p>🌟 Python大家应该都会写了，推荐一本书<a href="https://python3-cookbook.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener">Python3 CookBook</a>，适合Python进阶。</p>
-<p>题外话：其实我觉得Python就像个熟悉的陌生人，因为太容易上手，所以市面上绝大部分Python Code都写得很烂，我自己的也是。特别是Python动态语言（弱类型语言）的特性，很容写出Bug并且让代码特别丑陋难以读懂。</p>
-<p>关于Python我觉得值得分享的是环境问题，一般大家都适用Anaconda的，对于新手有两个坑，这里浅谈一下：</p>
-<ul>
-<li>什么是解释器路径？可以认为你电脑里有几个Python=装了几个解释器（没错Python可以有很多个），你可能想问为什么要多个Python呢：抛开Python2和3的区别不说，Python作为解释型语言以及大量的第三方包的生态环境，命中注定版本会是个很难受的问题。简单来说就是一定要认准解释器路径，很多问题都是你在PyCharm里用一个Anaconda的Python解释器，结果在命令行里给/usr/bin/python.exe装了一堆pip，那结果必然是modules not found。</li>
-<li>什么是PYTHONPATH？简单来说你的Python解释器会遍历的路径，这些路径下的python模块都是可以引用的。必要的时候可以手动添加PYTHONPATH。</li>
-</ul>
-<h4 id="Java：Web后端-大数据系统"><a href="#Java：Web后端-大数据系统" class="headerlink" title="Java：Web后端+大数据系统"></a>Java：Web后端+大数据系统</h4><p>Web后端其实我们用Python也能写（Flask、Dj等），但是工业界还是以Java为主，但是我个人觉得这种Web开发工作会比较无聊。</p>
-<p>🌟 Java入门推荐李广建老师的Java编程课（作业合理、给分很好），可以结合<a href="https://www.liaoxuefeng.com/wiki/1252599548343744" target="_blank" rel="noopener">廖雪峰的Java教程</a>。</p>
-<p>大数据系统这一块，说实话应该是我目前接触最少的内容，分布式计算里会用到，我目前仍然在学习，这一块只能暂时空缺了。</p>
-<h4 id="Javascript：前端-可视化"><a href="#Javascript：前端-可视化" class="headerlink" title="Javascript：前端+可视化"></a>Javascript：前端+可视化</h4><p>我是靠前端入门编程的，信管的同学也很可能是靠前端接触到大的编程项目（信架构说的就是你！）。有一说一Html和Css不算什么，JS才是大头，而且前端框架日新月异。</p>
-<p>🌟 关于前端我只推荐一个框架：<a href="https://getbootstrap.com/" target="_blank" rel="noopener">Bootstrap</a>，简洁好看，GitHub的前端就是用的这些组件。</p>
-<p>可视化我首先推荐matplotlib（虽然这是python的包），适合机器学习输出结果。如果迫不得已需要在前端用，推荐echarts.js等，类似工具特别多。</p>
-<p>🌟 matplotlib学习推荐步老师的可视化课（看课件就行）。</p>
-<h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><p>机器学习</p>
-<ul>
-<li>西瓜书（入门）</li>
-<li><a href="https://csdiy.wiki/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/ML/" target="_blank" rel="noopener">吴恩达机器学习</a></li>
-</ul>
-<p>深度学习</p>
-<ul>
-<li><a href="https://csdiy.wiki/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CS230/" target="_blank" rel="noopener">吴恩达深度学习</a></li>
-<li>花书（Deep Learning）太难啃了</li>
-</ul>
-<p>自然语言处理NLP</p>
-<ul>
-<li><a href="https://csdiy.wiki/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CS224n/" target="_blank" rel="noopener">斯坦福CS224N</a></li>
-</ul>
-<p>PyTorch 入门</p>
-<ul>
-<li>❓ PyTorch还是Tensorflow（Keras）？入门可以试试Keras，但是迟早要学PyTorch</li>
-<li>官网文档，<a href="https://mp.weixin.qq.com/s/pJtix7ktgazeo0zhSdsIcg" target="_blank" rel="noopener">一个比较简单但完整的架构</a>，<a href="https://d2l.ai/" target="_blank" rel="noopener">D2L（英文版比中文版好）</a></li>
-</ul>
-<p>看Paper</p>
-<ul>
-<li><a href="https://www.semanticscholar.org/" target="_blank" rel="noopener">semantic scholar</a> 引文系统比较好（most influential）</li>
-<li><a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a> 最全</li>
-<li><a href="https://paperswithcode.com/" target="_blank" rel="noopener">papers with code</a> 面向任务和数据集学习</li>
-<li>Google Scholar 感觉基本用不上</li>
-</ul>
-<h3 id="大数据系统"><a href="#大数据系统" class="headerlink" title="大数据系统"></a>大数据系统</h3><blockquote>
-<p>非常惭愧，这块内容目前比较空缺，目前正在学习分布式系统（Hadoop等）和并行计算（Cuda等），希望能早日补上这个坑。</p>
-</blockquote>
-<p>Google的三驾马车</p>
-<ul>
-<li>MapReduce</li>
-<li>Big Table</li>
-<li>GFS</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><blockquote>
-<p>这些杂七杂八的东西一般是课程不交的东西，也是我和科班学生差距最小的地方。</p>
-<p>再加上我本身是个<strong>工欲善其事，必先利其器</strong>的忠实爱好者（简称：差生文具多），这里我想重点展开。</p>
-</blockquote>
-<h4 id="计算机系统：Linux、Shell"><a href="#计算机系统：Linux、Shell" class="headerlink" title="计算机系统：Linux、Shell"></a>计算机系统：Linux、Shell</h4><p>前些天在树洞看到有人说ics（计算机系统导论，信科最有名的课之一，copy自cmu15213）和四大礼包（计算机组织与体系结构、操作系统、编译原理、计算机网络）的区别是：ics教会信科学生使用计算机系统，而四大礼包是教你怎么构建计算机系统。我觉得对于信管的同学也是一样，当然我们一般不需要理解系统的内存、汇编和网络等底层原理，但是我认为掌握基础的Linux shell交互能力还是非常重要的。</p>
-<p>写到这我突然想到一个问题，为什么“技术”青睐Linux，一方面当然是因为Linux开源所以便宜（很难想象阿里云提供的虚拟机装的是价值一千多的Windows操作系统，macOS虽然免费但理论上只支持apple设备），另一方面Linux（祖先是unix）和windows在操作系统的演化路径上很早就分岔了，Linux始终是开发环境的最佳选择无可撼动（除非写C#等windows程序）。</p>
-<p>虽然信管同学接触的工具大部分是windows/macOS桌面版的，但是一旦深入到技术问题（比如部署到服务器，比如使用未名一号跑GPU任务）很难避开Linux，所以我认为Linux（以及Linux的门户Shell）是必学的。所谓的Shell就是大家熟知的“命令行”，常见的Shell有Bash即Bourne shell、Zsh等，不同的Linux Shell整体功能接近，但是在一些高级功能上会有差异。</p>
-<p>🌟 Linux Shell相关的内容网上特别多，我推荐的学习方法是Google：如何在Linux上XXXXXX。如果想简单系统学习可以参考<a href="https://missing.csail.mit.edu/" target="_blank" rel="noopener">MIT: The Missing Semester</a>（我没有看过，但是瞄了几眼感觉很不错）。</p>
-<h4 id="协作系统：Github、Git"><a href="#协作系统：Github、Git" class="headerlink" title="协作系统：Github、Git"></a>协作系统：Github、Git</h4><p>Git是Linus在开发Linux是因为不满意SCN而”随手写的“开源版本控制工具，我认为Git的入门门槛很高，但是现在如果没有Git我已经不能安心的写超过50行的程序了。Git关键是连点：版本控制+团队协作。</p>
-<p>🌟 我是看<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">廖雪峰</a>的教程入门的，其实Git基础功能并不难，学到Pull和Merge就差不多了。另外还有一个<a href="https://learngitbranching.js.org/" target="_blank" rel="noopener">Git游戏</a>很适合精通Git操作。</p>
-<hr>
-<p>GitHub也称为全球最大♂同性交友社区（👊），它是一个免费的Git仓库服务，可以保护好你的代码，并且和其他人一起分享，开源体系的重要支撑（当然还有可私有化的GitLab等）。总之绝大多数开源的项目都是放在Github的，Github作为交友社区，可以关注一些你感兴趣的开发者（欢迎来<a href="https://github.com/fishiu" target="_blank" rel="noopener">Follow我</a>😄，你可以经常看到我又Star哪些好项目）。</p>
-<h4 id="编程环境：Conda、Docker"><a href="#编程环境：Conda、Docker" class="headerlink" title="编程环境：Conda、Docker"></a>编程环境：Conda、Docker</h4><p>Conda上面已经说过了，最近我新学了Docker我觉得非常美妙。Docker是用Golang写的，基本的原理就是，我写了个程序，为了方便所有人在所有机器上能够快速跑起来，我写一个Docker File（类似于给电脑看的说明书），你只要根据我这个docker file创建docker环境（类似于虚拟机，但是比虚拟机快、轻量）。</p>
-<p>Docker我花了很久才入门，被镜像（image）、容器（container）等概念搞的团团转。后来我被一句话点醒了：</p>
-<blockquote>
-<p>这里其实出现了两个概念: “镜像” 和 “容器”. 你可以把它们理解为: <strong>前者是一个硬盘, 里面装好了操作系统</strong>, 但它是静态的, 你不能直接拿它来运行. <strong>后者是一台电脑, 里面安装了硬盘</strong>, 就能运行对应的操作系统.</p>
-<p>出自<a href="https://pku-minic.github.io/online-doc/#/lv0-env-config/docker" target="_blank" rel="noopener">PKU编译实习文档</a></p>
-</blockquote>
-<p>另外最初我最大的疑问是Docker这个容器里的文件到底怎么还外部进行交互，我相信等你实践时可能也会有这个疑问，现在我懂了，启动container时指定<code>-v</code>参数即可。</p>
-<p>最后补一句，Docker真的很有用，咱们组的Doccano标注工具就是用Docker一个命令5秒钟就跑起来的（虽然第一次用为了搞清楚这个命令怎么成功运行花了我至少五个小时……）</p>
-<p>🌟 Docker入门推荐<a href="https://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>
-<h4 id="写作：-LaTeX-、Markdown"><a href="#写作：-LaTeX-、Markdown" class="headerlink" title="写作：$\LaTeX$、Markdown"></a>写作：$\LaTeX$、Markdown</h4><p>写英文Paper强烈推荐$\LaTeX$（因为设置中文环境比较烦），非常好看，而且较高的学习门槛让人在编译成功后，一个字没写的状态下就能产生巨大的成就感🐶。言归正传，Latex的好处有</p>
-<ul>
-<li>现成的模板</li>
-<li>参考文献管理</li>
-<li>复杂公式输入（信管学生基本没这个需求）</li>
-</ul>
-<p>🌟 Latex入门强烈建议从<a href="https://www.overleaf.com/" target="_blank" rel="noopener">Overleaf</a>开始，不要试图安装TexLive试图提高成就感。Overleaf可以在线协作，唯一的缺点是编译比较慢（但是配置简单的优点绝对秒杀这个缺点），一般来说如果跟人合作写paper，Overleaf是最佳选择。如果胃口大了想在本地跑，推荐使用vscode作为编辑器。</p>
-<hr>
-<p>Markdown可以认为继承了一丝丝$\LaTeX$的哲学，也就是格式与内容分离。如果你经常看github上的项目，Readme八成就是markdown写的，而且可以发现Github对markdown的支持是很好的。</p>
-<p>🌟 Markdown入门很简单，网上随便搜。</p>
-<h4 id="编程工具：Visual-Studio-Code、Jetbrains系列"><a href="#编程工具：Visual-Studio-Code、Jetbrains系列" class="headerlink" title="编程工具：Visual Studio Code、Jetbrains系列"></a>编程工具：Visual Studio Code、Jetbrains系列</h4><p>Visual Studio Code是微软对标Sublime Text开发的编辑器，裸的VSCode就是个记事本，但是VSCode的插件生态实在是太好了，好到让他变成了宇宙第一IDE（也有说宇宙第一IDE是Visual Studio，大家在机房学C用的那个）。</p>
-<p>🌟 网上有很多VSCode必备插件，这里暂时不推荐，有空了🚩我会整理一下我觉得非常有必要的插件。一般来说VSCode的正确打开方式是这样的：如果想学习Python，那就Google：VS Code配置Python开发环境即可，然后安装各类插件然后就Vans了。</p>
-<p>尽管VSCode宇宙第一，但是Jetbrains仍然是我写大型项目的第一选择，因为他除了软件大占内存大之外，基本上方面优于VSCode，特别是非常玄学的：我觉得Jetbrains的输入手感就是比VSCode好。当然Jetbrains不是宇宙第一IED是有原因的：</p>
-<ul>
-<li>收费（但是教育邮箱免费）</li>
-<li>不同语言一般需要不同的IDE，太笨重</li>
-</ul>
-<p>🌟 <a href="https://pycharm.iswbm.com/" target="_blank" rel="noopener">PyCharm中文指南</a> 比较进阶，有很多骚操作（https证书好像过期了，点一下“高级-继续访问“就行</p>
-<h4 id="效率工具：Notion"><a href="#效率工具：Notion" class="headerlink" title="效率工具：Notion"></a>效率工具：Notion</h4><p><a href="https://www.notion.so/" target="_blank" rel="noopener">Notion</a>和技术没什么关系，但是和学习有关系，单纯是整理知识用的。如果你和我一样一直没有找到完美的记笔记的工具，推荐试一试。</p>
-<p>Notion的优点：</p>
-<ul>
-<li>云端笔记</li>
-<li>数据库模块做的很好（我申请季用它来管理各种申请项目，自认为井井有条）</li>
-<li>适合爱美爱折腾的人</li>
-<li>非常自由的Block块模式，无限制嵌套，适合不喜欢把所有笔记放在同一层级下的人</li>
-</ul>
-<p>Notion的缺点：</p>
-<ul>
-<li>云端笔记（且无法无损本地化，也就意味着如果Notion倒闭了那就只剩下手动转移一条路了）</li>
-<li>不方便嵌入PDF（如果在课件上做笔记是重度需求那Bye-Bye）</li>
-</ul>
-<h2 id="我是怎么学技术的"><a href="#我是怎么学技术的" class="headerlink" title="我是怎么学技术的"></a>我是怎么学技术的</h2><h3 id="所谓的学习"><a href="#所谓的学习" class="headerlink" title="所谓的学习"></a>所谓的学习</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><ul>
-<li>尽量谷歌：谷歌英文资源多，谷歌的排名确实更加良心一些</li>
-<li>英文搜索更加准确：国内的教程抄袭、重复问题现象严重<ul>
-<li>不过谷歌的搜索结果好像是按照地区来召回的，即使用英文检索也很可能搜索到国内的网页</li>
-</ul>
-</li>
-<li>如何科学上网：可以从<a href="https://bbs.pku.edu.cn/v2/post-read.php?bid=1001&threadid=16264150" target="_blank" rel="noopener">wallless PKU</a>开始</li>
-<li>简单的Google ➡️ 文档 ➡️ 复杂的搜索（包括Github issue）➡️ 提问</li>
-<li>复杂的搜索可以通过专业论坛的专业板块来尝试不同的关键词</li>
-</ul>
-<h4 id="提问"><a href="#提问" class="headerlink" title="提问"></a>提问</h4><ul>
-<li>同学</li>
-<li>论坛提问：V2EX性价比非常高，而且时效性比较强。知乎、Reddit没试过。</li>
-<li>相关作者：写邮件、Github issues</li>
-<li>微信群：推荐苏剑林的科学空间交流群（我加过很多，唯独这个长青，因为打破了500人的壁垒）</li>
-</ul>
-<p>记录整理：Notion</p>
-<p>复用：Snippets、Gist、Cheat Sheet</p>
-<h3 id="🈲️-资源网站"><a href="#🈲️-资源网站" class="headerlink" title="🈲️ 资源网站"></a>🈲️ 资源网站</h3><h4 id="综合类型资源网站"><a href="#综合类型资源网站" class="headerlink" title="综合类型资源网站"></a>综合类型资源网站</h4><ul>
-<li><a href="https://github.com/" target="_blank" rel="noopener">Github</a> 推荐、关注</li>
-<li>国内程序员论坛：<a href="https://www.v2ex.com/" target="_blank" rel="noopener">V2EX</a></li>
-<li>知乎：研究人员特别是人工智能（学历高、逼格高❓）<ul>
-<li>看有大佬说过：知乎仍然是国内计算机学者最活跃的论坛</li>
-</ul>
-</li>
-</ul>
-<h4 id="导航类型资源网站"><a href="#导航类型资源网站" class="headerlink" title="导航类型资源网站"></a>导航类型资源网站</h4><ul>
-<li>国外课程：<a href="www.csdiy.wiki">www.csdiy.wiki</a>（👍）</li>
-<li>公众号：大多数都不太行，但是他们追热点能力很强，就是广告很烦，推荐关注这些作者的知乎。</li>
-<li><a href="https://spaces.ac.cn/" target="_blank" rel="noopener">科学空间（苏剑林）</a>：热点追逐者，深入浅出的story teller</li>
-<li><a href="https://news.ycombinator.com/news" target="_blank" rel="noopener">Hacker News</a> 新闻（高视野）</li>
-</ul>
-<h4 id="搜索类型资源网站"><a href="#搜索类型资源网站" class="headerlink" title="搜索类型资源网站"></a>搜索类型资源网站</h4><ul>
-<li><a href="https://stackoverflow.com/" target="_blank" rel="noopener">Stackoverflow</a></li>
-<li><a href="https://www.reddit.com/" target="_blank" rel="noopener">Reddit</a>/<a href="https://www.quora.com/" target="_blank" rel="noopener">Quara</a></li>
-<li>google site:medium.com</li>
-</ul>
-<h2 id="举个例子：拥有一台服务器可以干什么"><a href="#举个例子：拥有一台服务器可以干什么" class="headerlink" title="举个例子：拥有一台服务器可以干什么"></a>举个例子：拥有一台服务器可以干什么</h2><h3 id="为什么需要一台服务器"><a href="#为什么需要一台服务器" class="headerlink" title="为什么需要一台服务器"></a>为什么需要一台服务器</h3><ul>
-<li>不间断运行</li>
-<li>实验的沙箱</li>
-</ul>
-<h3 id="有多折腾"><a href="#有多折腾" class="headerlink" title="有多折腾"></a>有多折腾</h3><h4 id="买一台服务器部署一个网站"><a href="#买一台服务器部署一个网站" class="headerlink" title="买一台服务器部署一个网站"></a>买一台服务器部署一个网站</h4><ul>
-<li>哪里买最便宜，丐版配置够用吗</li>
-<li>如何用ssh连接，如何免密连接</li>
-<li>如何用Linux Shell进行最基本的操作<ul>
-<li>apt-get install 等安装操作</li>
-</ul>
-</li>
-<li>如何安装Java/PHP/Python/MySQL<ul>
-<li>关于Java的安装曾经我也很困惑，其实就一句话：装在哪里不重要，重要的是<code>$JAVA_HOME</code>环境变量</li>
-<li>总之这一步就是把你的服务跑到某个端口</li>
-</ul>
-</li>
-<li>如何开放防火墙以使用特定的端口<ul>
-<li>至此，除了域名基本大功告成</li>
-</ul>
-</li>
-<li>如何使用Nginx配置某个端口的域名<ul>
-<li>这个有点难理解，尽可能简单的解释：Niginx是网络的哨兵，根据请求的域名把不同的访客引到不同端口的服务（一台机器只能有一个IP地址，但是可以有很多端口）</li>
-</ul>
-</li>
-<li>如何备案</li>
-<li>如何https加密认证</li>
-<li>如何备份数据库</li>
-</ul>
-<h4 id="如何部署选课小助手"><a href="#如何部署选课小助手" class="headerlink" title="如何部署选课小助手"></a>如何部署选课小助手</h4><ul>
-<li>如何安装Git并Clone刷课机的仓库</li>
-<li>如何后台运行<ul>
-<li><code>nohup python main.py &gt; main.log 2&gt;&amp;1 &amp;</code><ul>
-<li>看不懂没关系，大致的意思是：后台运行main.py并且将所有输出重定向到main.log</li>
-</ul>
-</li>
-<li>tmux<ul>
-<li>维护一个session，强推</li>
-<li>可以看看阮一峰的教程</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="如何给服务器科学上网"><a href="#如何给服务器科学上网" class="headerlink" title="如何给服务器科学上网"></a>如何给服务器科学上网</h4><ul>
-<li>需要一些缘分，或者手动安装v2ray可执行文件</li>
-<li>写对应节点的规则</li>
-<li>shell走代理需要export http_proxy=XXXXX等环境变量</li>
-</ul>
-<h2 id="未来发展的方向"><a href="#未来发展的方向" class="headerlink" title="未来发展的方向"></a>未来发展的方向</h2><p>想跟大家探讨</p>
-<ul>
-<li>信管+（大数据）技术</li>
-<li>信科方向</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/27/technical-share/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
