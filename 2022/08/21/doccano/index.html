@@ -20,25 +20,25 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="vercel 不错子   “这个彩带太棒了!” 在大脸猫的疯狂安利(以及技术求助)下，我也尝试了通过nobelium在vercel部署notion博客。 三分钟部署完我直拍大腿：这么妙的东西居然不是我发明的! 言归正传，记录一些我遇到的坑，以及一些必要的对vercel代码仓库的改进以实现自定义。">
+  <meta name="description" content="本文介绍一下如何购买一台小服务器，并且以部署标注工具doccano为案例进行实操，包括如下内容  服务器选购建议 服务器的基本配置  防火墙   如何部署doccano  安装docker 安装并启动doccano">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tips When Deploying Your Notion Blogs to Vercel with Nobelium">
-<meta property="og:url" content="http://yoursite.com/2022/04/01/nobelium/index.html">
+<meta property="og:title" content="How to deploy doccano on my new server">
+<meta property="og:url" content="http://yoursite.com/2022/08/21/doccano/index.html">
 <meta property="og:site_name" content="Fishiu">
-<meta property="og:description" content="vercel 不错子   “这个彩带太棒了!” 在大脸猫的疯狂安利(以及技术求助)下，我也尝试了通过nobelium在vercel部署notion博客。 三分钟部署完我直拍大腿：这么妙的东西居然不是我发明的! 言归正传，记录一些我遇到的坑，以及一些必要的对vercel代码仓库的改进以实现自定义。">
+<meta property="og:description" content="本文介绍一下如何购买一台小服务器，并且以部署标注工具doccano为案例进行实操，包括如下内容  服务器选购建议 服务器的基本配置  防火墙   如何部署doccano  安装docker 安装并启动doccano">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://pic.fishiu.com/uPic/aaL4yV.png">
-<meta property="og:image" content="http://pic.fishiu.com/uPic/4ESpfF.png">
-<meta property="article:published_time" content="2022-03-31T18:24:50.000Z">
-<meta property="article:modified_time" content="2022-03-31T18:24:50.000Z">
+<meta property="og:image" content="http://pic.fishiu.com/uPic/gAVkOy.png">
+<meta property="og:image" content="http://pic.fishiu.com/uPic/Y6SLlF.png">
+<meta property="og:image" content="http://pic.fishiu.com/uPic/xFIgut.png">
+<meta property="article:published_time" content="2022-08-21T08:42:52.000Z">
+<meta property="article:modified_time" content="2022-08-21T08:42:52.000Z">
 <meta property="article:author" content="Xiaoyuan Jin">
-<meta property="article:tag" content="博客">
-<meta property="article:tag" content="Customize">
-<meta property="article:tag" content="Tutorial">
+<meta property="article:tag" content="服务器">
+<meta property="article:tag" content="部署">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://pic.fishiu.com/uPic/aaL4yV.png">
+<meta name="twitter:image" content="http://pic.fishiu.com/uPic/gAVkOy.png">
 
-<link rel="canonical" href="http://yoursite.com/2022/04/01/nobelium/">
+<link rel="canonical" href="http://yoursite.com/2022/08/21/doccano/">
 
 
 <script id="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>Tips When Deploying Your Notion Blogs to Vercel with Nobelium | Fishiu</title>
+  <title>How to deploy doccano on my new server | Fishiu</title>
   
 
 
@@ -171,7 +171,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/04/01/nobelium/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/08/21/doccano/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -184,7 +184,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Tips When Deploying Your Notion Blogs to Vercel with Nobelium
+          How to deploy doccano on my new server
         </h1>
 
         <div class="post-meta">
@@ -195,7 +195,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-04-01 02:24:50" itemprop="dateCreated datePublished" datetime="2022-04-01T02:24:50+08:00">2022-04-01</time>
+              <time title="Created: 2022-08-21 16:42:52" itemprop="dateCreated datePublished" datetime="2022-08-21T16:42:52+08:00">2022-08-21</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -207,7 +207,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Geek/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                  <a href="/categories/Geek/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
                 </span>
             </span>
 
@@ -217,14 +217,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.2k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -236,33 +236,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>
-  <img style="margin-bottom: 15px" src="http://pic.fishiu.com/uPic/aaL4yV.png">
-  <div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">vercel 不错子</div>
-</center>
-<blockquote>
-<p>“这个彩带太棒了!”</p>
-<p>在<a target="_blank" rel="noopener" href="https://dlmacy.vercel.app/">大脸猫</a>的疯狂安利(以及技术求助)下，我也尝试了通过nobelium在vercel部署notion博客。</p>
-<p>三分钟部署完我直拍大腿：这么妙的东西居然不是我发明的!</p>
-<p>言归正传，记录一些我遇到的坑，以及一些必要的对vercel代码仓库的改进以实现自定义。</p>
-</blockquote>
+        <p>本文介绍一下如何购买一台小服务器，并且以部署标注工具doccano为案例进行实操，包括如下内容</p>
+<ul>
+<li>服务器选购建议</li>
+<li>服务器的基本配置
+<ul>
+<li>防火墙</li>
+</ul>
+</li>
+<li>如何部署doccano
+<ul>
+<li>安装docker</li>
+<li>安装并启动doccano</li>
+</ul>
+</li>
+</ul>
 <span id="more"></span>
-<p>我是参考少数派上的<a target="_blank" rel="noopener" href="https://sspai.com/post/66641">这篇教程</a>搭的，虽然因为时间原因有些不一致，但是总体没什么问题。</p>
-<h1 id="这一串nobeliumvercelnotion到底啥原理"><a class="markdownIt-Anchor" href="#这一串nobeliumvercelnotion到底啥原理"></a> 这一串nobelium+vercel+notion到底啥原理</h1>
-<p>我理解的工作流是这样的：vercel是一个服务器，提供部署服务，notion提供文字，而nobelium就是个搬运工：他获取了notion的文字，然后对notion进行一通美化，然后把东西给vercel去部署。咱这个搬运工就是GitHub里的那一堆代码。</p>
-<p>因此如果你想改页面格式的话，肯定要去改nobelium而不是vercel或者notion，那么nobelium在哪里呢? 就在你的GitHub Repository里面，所以要改你的Repository。</p>
-<p>特别的，开头提到的这篇教程其实是有错误的，按照它的操作方法你会在GitHub创建两个仓库，其实没必要，在vercel新建仓库的时候其实只要用一开始fork的同一个仓库即可(更具体的，就是把输入notion-blog那一步改成输入nobelium)。</p>
-<h1 id="如何去掉twitter链接"><a class="markdownIt-Anchor" href="#如何去掉twitter链接"></a> 如何去掉twitter链接</h1>
-<p>大部分东西都在根目录下<code>blog.config.js</code>配置文件中，参考注释基本都能读懂，特别注意改字符串的时候要保持单引号，如果换成双引号会build报错。如果想去掉头像以及边上的网页链接，可以在配置文件中注释掉<code>socialLink</code>这一行。</p>
-<h1 id="如何修改头像"><a class="markdownIt-Anchor" href="#如何修改头像"></a> 如何修改头像</h1>
-<p>每篇Post下面的头像链接没法这么容易改，事实上它藏在<code>layouts/layout.js</code>里面。45行左右，把src替换成想要的图片链接即可。这对于没有图床的人来说可能比较难上传自制的头像。但是因为我有图床，我就不想再想别的办法了。(事实上，七牛云图床是免费的，可以网上搜个教程)。另外还需要在<code>next.config.js</code>中给你的图片域名放行。</p>
-<img src="http://pic.fishiu.com/uPic/4ESpfF.png" style="zoom: 50%;" />
-<p>本来以为一定要https，干脆就给我的图床上了SSL证书，这里也插播一下：主要参考<a target="_blank" rel="noopener" href="https://developer.qiniu.com/fusion/4952/https-configuration">官网教程</a>即可。这里也有个小坑顺便记录一下：我是用的腾讯云的免费证书，提供的SSL证书的下载文件说明跟七牛云的牛头不对马嘴，最终在<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/43c9a41fbf4b">这里</a>找到了答案。</p>
-<p>言归正传，改完配置文件之后，使用git提交修改，vercel就会自动拉取你的commit进行部署。</p>
-<h1 id="时间导致的博客不显示"><a class="markdownIt-Anchor" href="#时间导致的博客不显示"></a> 时间导致的博客不显示</h1>
-<p>不知道是不是因为今天刚好是愚人节，我把notion里面post的时间设置为今天4月1号的时候，居然不显示博客。改成3月31日就可以显示，猜测是因为服务器时间还没到4月1日，所以这个其实是个类似博客定时发送的隐藏功能。</p>
-<p>最后码一下我的nobelium博客地址：<a target="_blank" rel="noopener" href="https://nblog.fishiu.com/">https://nblog.fishiu.com/</a>，还没想好放什么，可能会放一些notion里记录的知识吧。</p>
-<p>最后感谢热爱技术的<a target="_blank" rel="noopener" href="https://dlmacy.vercel.app/">大脸猫</a>又让我水了一篇博客～</p>
+<h2 id="选购服务器"><a class="markdownIt-Anchor" href="#选购服务器"></a> 选购服务器</h2>
+<p>一般用腾讯或者阿里云的轻量云服务器，最底层的配置是1核2G内存，学生特价能做到10元每月左右，我自己主力是使用腾讯云，下文以腾讯云为例。</p>
+<p>选购服务器的时候一般会让选择“镜像”，也就是我们所谓的操作系统，建议选择ubuntu最新版本（目前是ubuntu22.04），因为它的使用量大，网上教程好找。</p>
+<h2 id="配置服务器"><a class="markdownIt-Anchor" href="#配置服务器"></a> 配置服务器</h2>
+<p>拿到新的服务器之后，首先从腾讯云等供应商的控制台获得登陆密码，建议获得密码之后配置ssh免密码登录。</p>
+<p>到这里服务器基本就能用了，还差一件事，打开端口（腾讯云叫：安全组），入口如下图。</p>
+<p><img src="http://pic.fishiu.com/uPic/gAVkOy.png" alt="安全组入口" /></p>
+<p>简单解释一下原理，外界（包括你自己，包括黑客）通过网络访问机器时需要通过IP地址和端口（Port）来定位，为了安全起见，腾讯云默认一般只放通最常用的端口，比如SSH用的22（如果你把22关掉那一般就不能通过SSH来连接机器了，因为SSH默认是22）。但是如果你想要开放标注工具等自建网站，就需要把这个网站使用的端口也开放一下。</p>
+<p>所以怎么修改安全组呢？进入上面的安全组管理界面后，找到服务器正在使用的安全组，在入站规则里面进行“添加规则”，比如如果我要开放5000端口（后文案例开放的是8000，记得改一下），就这样添加：</p>
+<p><img src="http://pic.fishiu.com/uPic/Y6SLlF.png" alt="入站规则" /></p>
+<p>然后外部网络就可以访问5000这个端口了。</p>
+<h2 id="安装docker"><a class="markdownIt-Anchor" href="#安装docker"></a> 安装Docker</h2>
+<blockquote>
+<p>下面就是关于如何让这台服务器干活，我们以安装doccano标注系统为例</p>
+</blockquote>
+<p>首先安装docker，以<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">docker官网教程</a>为主，可以参考2022年春<a target="_blank" rel="noopener" href="https://www.notion.so/leverestfish/5d383950803649e89e5a780036a277fa#b6cfa37ddd7c4316b8a2f2ce19b3ae5a">分布式计算课程中的讲义</a>，最后记得测试一下是不是装好了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果报错的话，运行一下命令后，重试（其中&lt;username&gt;是你的用户名，比如ubuntu）</span></span><br><span class="line">sudo usermod -aG docker &lt;username&gt;</span><br></pre></td></tr></table></figure>
+<p>这个过程可能比较久，如果碰到问题不要着急，尽量先确定问题原因（版本问题？网络问题？），然后搜办法，<s>或者去腾讯云控制台把机器重装一下，从头来过</s>。如果网络不太给力，可以参考一下<a target="_blank" rel="noopener" href="https://evilran.me/2021/05/solve-docker-installation-too-slow-on-ubuntu">这个教程</a>（我是用了代理，但是比较麻烦，可以试试修改docker为国内源）</p>
+<h2 id="部署doccano"><a class="markdownIt-Anchor" href="#部署doccano"></a> 部署Doccano</h2>
+<p>装好docker就可以部署<a target="_blank" rel="noopener" href="https://github.com/doccano/doccano#docker">doccano</a>了，两个个命令就行了，注意里面有很多可以自定义的选项，比如 <code>admin@example.com</code> 和 <code>password</code>。启动容器后就可以直接根据IP地址:8000来访问了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">docker pull doccano/doccano</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个名为doccano（可以随便改）的容器，基于doccano/doccano</span></span><br><span class="line">docker container create --name doccano \</span><br><span class="line">  -e <span class="string">&quot;ADMIN_USERNAME=admin&quot;</span> \</span><br><span class="line">  -e <span class="string">&quot;ADMIN_EMAIL=admin@example.com&quot;</span> \</span><br><span class="line">  -e <span class="string">&quot;ADMIN_PASSWORD=password&quot;</span> \</span><br><span class="line">  -v doccano-db:/data \</span><br><span class="line">  -p 8000:8000 doccano/doccano</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动名为doccano的容器（上一条命了--name指定的名字）</span></span><br><span class="line">docker start doccano</span><br></pre></td></tr></table></figure>
+<p>Docker 操作还是比较复杂的，建议简单学一学，不要一不小心把容器删掉，那标注数据就全没了（一定要及时备份！）。</p>
+<p>完结撒花！</p>
+<p><img src="http://pic.fishiu.com/uPic/xFIgut.png" alt="完结" /></p>
 
     </div>
 
@@ -272,9 +285,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
-              <a href="/tags/Customize/" rel="tag"># Customize</a>
-              <a href="/tags/Tutorial/" rel="tag"># Tutorial</a>
+              <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"># 服务器</a>
+              <a href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag"># 部署</a>
           </div>
 
         
@@ -283,13 +295,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/27/technical-share/" rel="prev" title="Techniques All You Need">
-      <i class="fa fa-chevron-left"></i> Techniques All You Need
+    <a href="/2022/04/01/nobelium/" rel="prev" title="Tips When Deploying Your Notion Blogs to Vercel with Nobelium">
+      <i class="fa fa-chevron-left"></i> Tips When Deploying Your Notion Blogs to Vercel with Nobelium
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/08/21/doccano/" rel="next" title="How to deploy doccano on my new server">
-      How to deploy doccano on my new server <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -348,7 +357,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E4%B8%B2nobeliumvercelnotion%E5%88%B0%E5%BA%95%E5%95%A5%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text"> 这一串nobelium+vercel+notion到底啥原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%8E%BB%E6%8E%89twitter%E9%93%BE%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text"> 如何去掉twitter链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%A4%B4%E5%83%8F"><span class="nav-number">3.</span> <span class="nav-text"> 如何修改头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%AF%BC%E8%87%B4%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%8D%E6%98%BE%E7%A4%BA"><span class="nav-number">4.</span> <span class="nav-text"> 时间导致的博客不显示</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E8%B4%AD%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text"> 选购服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text"> 配置服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85docker"><span class="nav-number">3.</span> <span class="nav-text"> 安装Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2doccano"><span class="nav-number">4.</span> <span class="nav-text"> 部署Doccano</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
