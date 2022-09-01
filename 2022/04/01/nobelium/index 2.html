@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/fish.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/fish.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/fish.png">
+  <link rel="mask-icon" href="/images/fish.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="vercel 不错子    &quot;这个彩带太棒了!&quot; 在大脸猫的疯狂安利(以及技术求助)下，我也尝试了通过nobelium在vercel部署notion博客。 三分钟部署完我直拍大腿：这么妙的东西居然不是我发明的! 言归正传，记录一些我遇到的坑，以及一些必要的对vercel代码仓库的改进以实现自定义。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tips When Deploying Your Notion Blogs to Vercel with Nobelium">
+<meta property="og:url" content="http://yoursite.com/2022/04/01/nobelium/index.html">
+<meta property="og:site_name" content="Fishiu">
+<meta property="og:description" content="vercel 不错子    &quot;这个彩带太棒了!&quot; 在大脸猫的疯狂安利(以及技术求助)下，我也尝试了通过nobelium在vercel部署notion博客。 三分钟部署完我直拍大腿：这么妙的东西居然不是我发明的! 言归正传，记录一些我遇到的坑，以及一些必要的对vercel代码仓库的改进以实现自定义。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://pic.fishiu.com/uPic/aaL4yV.png">
+<meta property="og:image" content="http://pic.fishiu.com/uPic/4ESpfF.png">
+<meta property="article:published_time" content="2022-03-31T18:24:50.000Z">
+<meta property="article:modified_time" content="2022-03-31T20:01:32.691Z">
+<meta property="article:author" content="Xiaoyuan Jin">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Customize">
+<meta property="article:tag" content="Tutorial">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pic.fishiu.com/uPic/aaL4yV.png">
+
+<link rel="canonical" href="http://yoursite.com/2022/04/01/nobelium/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Tips When Deploying Your Notion Blogs to Vercel with Nobelium | Fishiu</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fishiu</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/04/01/nobelium/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xiaoyuan Jin">
+      <meta itemprop="description" content="Hope you find something interesting here.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fishiu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Tips When Deploying Your Notion Blogs to Vercel with Nobelium
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-04-01 02:24:50 / Modified: 04:01:32" itemprop="dateCreated datePublished" datetime="2022-04-01T02:24:50+08:00">2022-04-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Geek/" itemprop="url" rel="index"><span itemprop="name">Geek</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Geek/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center>
+<img style="margin-bottom: 15px" src="http://pic.fishiu.com/uPic/aaL4yV.png">
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">
+vercel 不错子
+</div>
+</center>
+<blockquote>
+<p>"这个彩带太棒了!"</p>
+<p>在<a target="_blank" rel="noopener" href="https://dlmacy.vercel.app/">大脸猫</a>的疯狂安利(以及技术求助)下，我也尝试了通过nobelium在vercel部署notion博客。</p>
+<p>三分钟部署完我直拍大腿：这么妙的东西居然不是我发明的!</p>
+<p>言归正传，记录一些我遇到的坑，以及一些必要的对vercel代码仓库的改进以实现自定义。</p>
+</blockquote>
+<span id="more"></span>
+<p>我是参考少数派上的<a target="_blank" rel="noopener" href="https://sspai.com/post/66641">这篇教程</a>搭的，虽然因为时间原因有些不一致，但是总体没什么问题。</p>
+<h1 id="这一串nobeliumvercelnotion到底啥原理">这一串nobelium+vercel+notion到底啥原理</h1>
+<p>我理解的工作流是这样的：vercel是一个服务器，提供部署服务，notion提供文字，而nobelium就是个搬运工：他获取了notion的文字，然后对notion进行一通美化，然后把东西给vercel去部署。咱这个搬运工就是GitHub里的那一堆代码。</p>
+<p>因此如果你想改页面格式的话，肯定要去改nobelium而不是vercel或者notion，那么nobelium在哪里呢? 就在你的GitHub Repository里面，所以要改你的Repository。</p>
+<p>特别的，开头提到的这篇教程其实是有错误的，按照它的操作方法你会在GitHub创建两个仓库，其实没必要，在vercel新建仓库的时候其实只要用一开始fork的同一个仓库即可(更具体的，就是把输入notion-blog那一步改成输入nobelium)。</p>
+<h1 id="如何去掉twitter链接">如何去掉twitter链接</h1>
+<p>大部分东西都在根目录下<code>blog.config.js</code>配置文件中，参考注释基本都能读懂，特别注意改字符串的时候要保持单引号，如果换成双引号会build报错。如果想去掉头像以及边上的网页链接，可以在配置文件中注释掉<code>socialLink</code>这一行。</p>
+<h1 id="如何修改头像">如何修改头像</h1>
+<p>每篇Post下面的头像链接没法这么容易改，事实上它藏在<code>layouts/layout.js</code>里面。45行左右，把src替换成想要的图片链接即可。这对于没有图床的人来说可能比较难上传自制的头像。但是因为我有图床，我就不想再想别的办法了。(事实上，七牛云图床是免费的，可以网上搜个教程)。另外还需要在<code>next.config.js</code>中给你的图片域名放行。</p>
+<p><img src="http://pic.fishiu.com/uPic/4ESpfF.png" style="zoom: 50%;" /></p>
+<p>本来以为一定要https，干脆就给我的图床上了SSL证书，这里也插播一下：主要参考<a target="_blank" rel="noopener" href="https://developer.qiniu.com/fusion/4952/https-configuration">官网教程</a>即可。这里也有个小坑顺便记录一下：我是用的腾讯云的免费证书，提供的SSL证书的下载文件说明跟七牛云的牛头不对马嘴，最终在<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/43c9a41fbf4b">这里</a>找到了答案。</p>
+<p>言归正传，改完配置文件之后，使用git提交修改，vercel就会自动拉取你的commit进行部署。</p>
+<h1 id="时间导致的博客不显示">时间导致的博客不显示</h1>
+<p>不知道是不是因为今天刚好是愚人节，我把notion里面post的时间设置为今天4月1号的时候，居然不显示博客。改成3月31日就可以显示，猜测是因为服务器时间还没到4月1日，所以这个其实是个类似博客定时发送的隐藏功能。</p>
+<p>最后码一下我的nobelium博客地址：<a target="_blank" rel="noopener" href="https://nblog.fishiu.com/">https://nblog.fishiu.com/</a>，还没想好放什么，可能会放一些notion里记录的知识吧。</p>
+<p>最后感谢热爱技术的<a target="_blank" rel="noopener" href="https://dlmacy.vercel.app/">大脸猫</a>又让我水了一篇博客～</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
+              <a href="/tags/Customize/" rel="tag"># Customize</a>
+              <a href="/tags/Tutorial/" rel="tag"># Tutorial</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/27/technical-share/" rel="prev" title="Techniques All You Need">
+      <i class="fa fa-chevron-left"></i> Techniques All You Need
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/21/doccano/" rel="next" title="How to deploy doccano on my new server">
+      How to deploy doccano on my new server <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E4%B8%B2nobeliumvercelnotion%E5%88%B0%E5%BA%95%E5%95%A5%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">这一串nobelium+vercel+notion到底啥原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%8E%BB%E6%8E%89twitter%E9%93%BE%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text">如何去掉twitter链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%A4%B4%E5%83%8F"><span class="nav-number">3.</span> <span class="nav-text">如何修改头像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%AF%BC%E8%87%B4%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%8D%E6%98%BE%E7%A4%BA"><span class="nav-number">4.</span> <span class="nav-text">时间导致的博客不显示</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xiaoyuan Jin"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">Xiaoyuan Jin</p>
+  <div class="site-description" itemprop="description">Hope you find something interesting here.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fishiu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fishiu" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:im.jxy@qq.com" title="E-Mail → mailto:im.jxy@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-fish"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiaoyuan Jin</span>
+
+  <span class="post-meta-divider">|</span>
+  <span class="post-meta-item-text">京ICP备20009877号-2</span>
+</div>
+
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
