@@ -20,25 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="本文介绍一下如何购买一台小服务器，并且以部署标注工具doccano为案例进行实操，包括如下内容  服务器选购建议 服务器的基本配置  防火墙   如何部署doccano  安装docker 安装并启动doccano">
+  <meta name="description" content="Ambit: In-Memory Accelerator for Bulk Bitwise Operations Using Commodity DRAM Technology 🔗  Ambit is the ﬁrst work that integrates support for bulk bitwise operations directly into a DRAM memory arra">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to deploy doccano on my new server">
-<meta property="og:url" content="http://yoursite.com/2022/08/21/doccano/index.html">
+<meta property="og:title" content="1-3-ambit">
+<meta property="og:url" content="http://yoursite.com/2023/01/11/1-3-ambit/index.html">
 <meta property="og:site_name" content="Fishiu">
-<meta property="og:description" content="本文介绍一下如何购买一台小服务器，并且以部署标注工具doccano为案例进行实操，包括如下内容  服务器选购建议 服务器的基本配置  防火墙   如何部署doccano  安装docker 安装并启动doccano">
+<meta property="og:description" content="Ambit: In-Memory Accelerator for Bulk Bitwise Operations Using Commodity DRAM Technology 🔗  Ambit is the ﬁrst work that integrates support for bulk bitwise operations directly into a DRAM memory arra">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://pic.fishiu.com/uPic/gAVkOy.png">
-<meta property="og:image" content="http://pic.fishiu.com/uPic/Y6SLlF.png">
-<meta property="og:image" content="http://pic.fishiu.com/uPic/xFIgut.png">
-<meta property="article:published_time" content="2022-08-21T08:42:52.000Z">
-<meta property="article:modified_time" content="2022-08-21T08:42:52.000Z">
+<meta property="article:published_time" content="2023-01-11T04:49:56.000Z">
+<meta property="article:modified_time" content="2023-01-11T04:49:56.000Z">
 <meta property="article:author" content="Xiaoyuan Jin">
-<meta property="article:tag" content="服务器">
-<meta property="article:tag" content="部署">
+<meta property="article:tag" content="PaperReview">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://pic.fishiu.com/uPic/gAVkOy.png">
 
-<link rel="canonical" href="http://yoursite.com/2022/08/21/doccano/">
+<link rel="canonical" href="http://yoursite.com/2023/01/11/1-3-ambit/">
 
 
 <script id="page-configurations">
@@ -51,7 +46,7 @@
   };
 </script>
 
-  <title>How to deploy doccano on my new server | Fishiu</title>
+  <title>1-3-ambit | Fishiu</title>
   
 
 
@@ -171,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/08/21/doccano/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/01/11/1-3-ambit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpeg">
@@ -184,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          How to deploy doccano on my new server
+          1-3-ambit
         </h1>
 
         <div class="post-meta">
@@ -195,7 +190,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2022-08-21 16:42:52" itemprop="dateCreated datePublished" datetime="2022-08-21T16:42:52+08:00">2022-08-21</time>
+              <time title="Created: 2023-01-11 12:49:56" itemprop="dateCreated datePublished" datetime="2023-01-11T12:49:56+08:00">2023-01-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -203,11 +198,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Geek/" itemprop="url" rel="index"><span itemprop="name">Geek</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Geek/%E7%8E%AF%E5%A2%83/" itemprop="url" rel="index"><span itemprop="name">环境</span></a>
+                  <a href="/categories/%E7%A7%91%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">科研</span></a>
                 </span>
             </span>
 
@@ -217,14 +208,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.5k</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -236,46 +227,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文介绍一下如何购买一台小服务器，并且以部署标注工具doccano为案例进行实操，包括如下内容</p>
-<ul>
-<li>服务器选购建议</li>
-<li>服务器的基本配置
-<ul>
-<li>防火墙</li>
-</ul>
-</li>
-<li>如何部署doccano
-<ul>
-<li>安装docker</li>
-<li>安装并启动doccano</li>
-</ul>
-</li>
-</ul>
-<span id="more"></span>
-<h2 id="选购服务器"><a class="markdownIt-Anchor" href="#选购服务器"></a> 选购服务器</h2>
-<p>一般用腾讯或者阿里云的轻量云服务器，最底层的配置是1核2G内存，学生特价能做到10元每月左右，我自己主力是使用腾讯云，下文以腾讯云为例。</p>
-<p>选购服务器的时候一般会让选择“镜像”，也就是我们所谓的操作系统，建议选择ubuntu最新版本（目前是ubuntu22.04），因为它的使用量大，网上教程好找。</p>
-<h2 id="配置服务器"><a class="markdownIt-Anchor" href="#配置服务器"></a> 配置服务器</h2>
-<p>拿到新的服务器之后，首先从腾讯云等供应商的控制台获得登陆密码，建议获得密码之后配置ssh免密码登录。</p>
-<p>到这里服务器基本就能用了，还差一件事，打开端口（腾讯云叫：安全组），入口如下图。</p>
-<p><img src="http://pic.fishiu.com/uPic/gAVkOy.png" alt="安全组入口" /></p>
-<p>简单解释一下原理，外界（包括你自己，包括黑客）通过网络访问机器时需要通过IP地址和端口（Port）来定位，为了安全起见，腾讯云默认一般只放通最常用的端口，比如SSH用的22（如果你把22关掉那一般就不能通过SSH来连接机器了，因为SSH默认是22）。但是如果你想要开放标注工具等自建网站，就需要把这个网站使用的端口也开放一下。</p>
-<p>所以怎么修改安全组呢？进入上面的安全组管理界面后，找到服务器正在使用的安全组，在入站规则里面进行“添加规则”，比如如果我要开放5000端口（后文案例开放的是8000，记得改一下），就这样添加：</p>
-<p><img src="http://pic.fishiu.com/uPic/Y6SLlF.png" alt="入站规则" /></p>
-<p>然后外部网络就可以访问5000这个端口了。</p>
-<h2 id="安装docker"><a class="markdownIt-Anchor" href="#安装docker"></a> 安装Docker</h2>
+        <p><a target="_blank" rel="noopener" href="https://safari.ethz.ch/review/architecture22/doc.php/comparch-fs22-paper3.pdf">Ambit: In-Memory Accelerator for Bulk Bitwise Operations Using Commodity DRAM Technology 🔗</a></p>
 <blockquote>
-<p>下面就是关于如何让这台服务器干活，我们以安装doccano标注系统为例</p>
+<p>Ambit is the ﬁrst work that integrates support for bulk bitwise operations directly into a DRAM memory array, and achieved high throughput and eﬃciency.</p>
 </blockquote>
-<p>首先安装docker，以<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/ubuntu/">docker官网教程</a>为主，可以参考2022年春<a target="_blank" rel="noopener" href="https://www.notion.so/leverestfish/5d383950803649e89e5a780036a277fa#b6cfa37ddd7c4316b8a2f2ce19b3ae5a">分布式计算课程中的讲义</a>，最后记得测试一下是不是装好了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果报错的话，运行一下命令后，重试（其中&lt;username&gt;是你的用户名，比如ubuntu）</span></span><br><span class="line">sudo usermod -aG docker &lt;username&gt;</span><br></pre></td></tr></table></figure>
-<p>这个过程可能比较久，如果碰到问题不要着急，尽量先确定问题原因（版本问题？网络问题？），然后搜办法，<s>或者去腾讯云控制台把机器重装一下，从头来过</s>。如果网络不太给力，可以参考一下<a target="_blank" rel="noopener" href="https://evilran.me/2021/05/solve-docker-installation-too-slow-on-ubuntu">这个教程</a>（我是用了代理，但是比较麻烦，可以试试修改docker为国内源）</p>
-<h2 id="部署doccano"><a class="markdownIt-Anchor" href="#部署doccano"></a> 部署Doccano</h2>
-<p>装好docker就可以部署<a target="_blank" rel="noopener" href="https://github.com/doccano/doccano#docker">doccano</a>了，两个个命令就行了，注意里面有很多可以自定义的选项，比如 <code>admin@example.com</code> 和 <code>password</code>。启动容器后就可以直接根据IP地址:8000来访问了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">docker pull doccano/doccano</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个名为doccano（可以随便改）的容器，基于doccano/doccano</span></span><br><span class="line">docker container create --name doccano \</span><br><span class="line">  -e <span class="string">&quot;ADMIN_USERNAME=admin&quot;</span> \</span><br><span class="line">  -e <span class="string">&quot;ADMIN_EMAIL=admin@example.com&quot;</span> \</span><br><span class="line">  -e <span class="string">&quot;ADMIN_PASSWORD=password&quot;</span> \</span><br><span class="line">  -v doccano-db:/data \</span><br><span class="line">  -p 8000:8000 doccano/doccano</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动名为doccano的容器（上一条命了--name指定的名字）</span></span><br><span class="line">docker start doccano</span><br></pre></td></tr></table></figure>
-<p>Docker 操作还是比较复杂的，建议简单学一学，不要一不小心把容器删掉，那标注数据就全没了（一定要及时备份！）。</p>
-<p>完结撒花！</p>
-<p><img src="http://pic.fishiu.com/uPic/xFIgut.png" alt="完结" /></p>
+<span id="more"></span>
+<h2 id="strengths">Strengths</h2>
+<ul>
+<li><p>First, there are three advantages of Ambit itself: (1) no bandwidth limit with in-memory computing; (2) no extra dram command and address management change; (3) keep the same DRAM-microarchitecture for all technologies.</p></li>
+<li><p>Second, there are mainly two contributions beside proposing Ambit (cost and effi):</p>
+<ol type="1">
+<li>It presents the industrial availability.
+<ul>
+<li>Ambit can be implemented with modest change to the DRAM design.</li>
+<li>The work also proved the reliability of Ambit rigorously.</li>
+</ul></li>
+<li>It proves the better performance over both ideal and real-world applications.</li>
+</ol></li>
+<li><p>It is not necessary to replace all common commodity DRAMs. Only replacing for the data-centric components is enough.</p></li>
+<li><p>I really admire the detailed explanation towards DRAM, it would be the reference when I introduce thoes primitive DRAM commands to others.</p></li>
+<li><p>Very good explanation towards how to make TRA work. It is rigorous enough to consider the five potential issues.</p></li>
+</ul>
+<h2 id="weaknesses">Weaknesses</h2>
+<ul>
+<li><p>Measuring the modification cost is really important. What is modest change exactly? It would be better if there is more discussion over the modification over common DRAM.</p></li>
+<li><p>The three real-applications still seems a bit specific. Could we come up with even more commonly used cases? In other words, are bitwise operations really that frequently used?</p></li>
+<li><p>Is there any application scene that bit operations are used not in "bit-xxx" functions?</p></li>
+<li><p>Ambit still need new ISA support, and consequently new compiler support, which is not convenient to be applied.</p></li>
+<li><p>The implementation part is not clear (at least for me), how to modify the DRAM physically to implement those functions.</p></li>
+</ul>
+<h2 id="can-you-do-better">Can you do better?</h2>
+<ul>
+<li><p>I would explain why use these three bool operation, and-or-not. Is it the optimal combination to reach full-logic? Why don't use xand-xor-not? I would do some bool computation and prove it.</p></li>
+<li><p>I think there is still too many modifications to make it support ambit: rigorous, but annoying. I dont have better ideas, but I would like to try explaning this weakness.</p></li>
+</ul>
+<h2 id="other-comments">Other Comments</h2>
+<p>This paper smoothly presents the motivation, methods, potential issues and respect solutions to build Ambit. It really tells a good story and it seemed like a wonderful journey to read this paper.</p>
 
     </div>
 
@@ -285,8 +272,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag"># 服务器</a>
-              <a href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag"># 部署</a>
+              <a href="/tags/PaperReview/" rel="tag"># PaperReview</a>
           </div>
 
         
@@ -295,13 +281,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/31/nobelium/" rel="prev" title="Tips When Deploying Your Notion Blogs to Vercel with Nobelium">
-      <i class="fa fa-chevron-left"></i> Tips When Deploying Your Notion Blogs to Vercel with Nobelium
+    <a href="/2022/12/15/1-15-mensa-paperreview/" rel="prev" title="Paper Review - Mensa">
+      <i class="fa fa-chevron-left"></i> Paper Review - Mensa
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/09/01/apply/" rel="next" title="My Master Application Story of 22 Fall">
-      My Master Application Story of 22 Fall <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -360,7 +343,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E8%B4%AD%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text"> 选购服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text"> 配置服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85docker"><span class="nav-number">3.</span> <span class="nav-text"> 安装Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2doccano"><span class="nav-number">4.</span> <span class="nav-text"> 部署Doccano</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#strengths"><span class="nav-number">1.</span> <span class="nav-text">Strengths</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weaknesses"><span class="nav-number">2.</span> <span class="nav-text">Weaknesses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#can-you-do-better"><span class="nav-number">3.</span> <span class="nav-text">Can you do better?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-comments"><span class="nav-number">4.</span> <span class="nav-text">Other Comments</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
