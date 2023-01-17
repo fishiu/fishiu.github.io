@@ -265,6 +265,149 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/01/17/3-2-pcm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xiaoyuan Jin">
+      <meta itemprop="description" content="Hope you find something interesting here.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fishiu">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/01/17/3-2-pcm/" class="post-title-link" itemprop="url">Paper Review - PCM</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-01-17 14:13:14" itemprop="dateCreated datePublished" datetime="2023-01-17T14:13:14+08:00">2023-01-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A7%91%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">科研</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://people.inf.ethz.ch/omutlu/pub/pcm_isca09.pdf">Architecting Phase Change Memory as a Scalable DRAM Alternative 🔗</a></p>
+<blockquote>
+<p>The authors propose architectural enhancements to make Phase Change Memory (PCM) competitive with DRAM as a memory scaling alternative. The enhancements address limitations such as long latencies, high energy writes, and finite endurance. These enhancements result in significant improvements in performance and endurance.</p>
+</blockquote>
+<h2 id="contents">Contents</h2>
+<ul>
+<li>Intro</li>
+<li>PCM tech
+<ul>
+<li>Memo cells</li>
+<li>writes</li>
+<li>write endurance</li>
+<li>reads</li>
+<li>process scaling</li>
+<li>array architecture</li>
+</ul></li>
+<li>baseline pcm/dram comparison
+<ul>
+<li>experimental methodology
+<ul>
+<li>delay and timing</li>
+<li>energy</li>
+</ul></li>
+<li>evaluation: baseline</li>
+</ul></li>
+<li>buffer organization
+<ul>
+<li>area and density analysis</li>
+<li>buffer design space</li>
+<li>evaluation: buffer organization</li>
+<li>evaluation: scaling comparison</li>
+</ul></li>
+<li>partial writes
+<ul>
+<li>mechanism</li>
+<li>endurance</li>
+<li>evaluation: partial writes</li>
+</ul></li>
+</ul>
+<h2 id="strengths">Strengths</h2>
+<ul>
+<li>The topic of this paper is rather grand as PCM is a new technoloty that can replace DRAM, and in other word, must be very complicated with lots of details. However the authors made it by grabbing two new technologies to architect PCM.</li>
+<li>The first technology is buffer design: it mainly focus on the spactial problem of a memory chip. The author first proposed precise formulations to characterize the area of array, sense amplifier, the latch, and the decoder. The area analysis serves as a foundation for buffer organization designing.</li>
+<li>The second technology is partial writes, which is intended to solve the endurance problem of PCM. The author first explain the mechanism of partial writes at two granularities: cache (lowest level) line size and word size. The evaluation presents both the performance and overhead and proved this mechanism to be practical.</li>
+</ul>
+<h2 id="weaknesses">Weaknesses</h2>
+<ul>
+<li>I think the weaknesses of this work is mainly about story telling. For instance, at the begenning, this paper did not clearly point out the contributions of this work. As mentioned in You and Your Research, we must need to learn how to sell our work, clearly and loudly.</li>
+<li>Another problem is in comparison. The core of this paper is to compare (newly architected) PCM with DRAM. However, the bottom mechanism of the two product are totally different so the baseline should be a SOTA DRAM and there should be some widely aknowledged metrics to measure the problems. I think the author need to explain this part strongly, otherwise the comparison is not convincing enough.</li>
+</ul>
+<h2 id="can-you-do-better">Can you do better?</h2>
+<ul>
+<li>I think this paper need a better name for the newly architected framework, simply PCM is not impressive.</li>
+</ul>
+<h2 id="takeaways">Takeaways</h2>
+<ul>
+<li>There are several complex formulations in this paper which is not commonly seen in architecure works. This work presents why and how to list formulations, and at the same time, the formulations are long but with good readability.</li>
+</ul>
+<h2 id="other-comments">Other comments</h2>
+<ul>
+<li>I would consider applying partial write also on DRAM, because this technology seems really good and DRAM also want a longer life. Of course I would start with research on trade off between performance and overhead.</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/01/16/3-1-rlmc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -997,98 +1140,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/12/14/1-1-youandyourresearch-review/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-      <meta itemprop="name" content="Xiaoyuan Jin">
-      <meta itemprop="description" content="Hope you find something interesting here.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fishiu">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/14/1-1-youandyourresearch-review/" class="post-title-link" itemprop="url">Paper Review - You and Your Research</a>
-        </h2>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-12-14 23:29:11" itemprop="dateCreated datePublished" datetime="2022-12-14T23:29:11+08:00">2022-12-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A7%91%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">科研</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.4k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><a target="_blank" rel="noopener" href="https://safari.ethz.ch/review/architecture22/doc.php/comparch-fs22-paper1.pdf">You and Your Research 🔗</a></p>
-<blockquote>
-<p>I am very grateful that I have the chance to read this paper which truly injected some inspiration into mine mindset. It is about GREAT WORK/RESEARCH and the elements or qualities to achieve it. It is not a technical paper but I will still try to review it with the recommended structure, as hamming told us sometimes we need to utilized <em>the system</em>.</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/12/14/1-1-youandyourresearch-review/" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1160,7 +1211,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
