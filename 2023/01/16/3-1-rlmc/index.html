@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Hope you find something interesting here.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fishiu">
-<meta property="og:url" content="http://yoursite.com/archives/2021/08/index.html">
+  <meta name="description" content="Self-Optimizing Memory Controllers: A Reinforcement Learning Approach 🔗  The authors propose a new memory controller design that uses reinforcement learning to optimize performance and bandwidth util">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Paper Review - RLMC">
+<meta property="og:url" content="http://yoursite.com/2023/01/16/3-1-rlmc/index.html">
 <meta property="og:site_name" content="Fishiu">
-<meta property="og:description" content="Hope you find something interesting here.">
+<meta property="og:description" content="Self-Optimizing Memory Controllers: A Reinforcement Learning Approach 🔗  The authors propose a new memory controller design that uses reinforcement learning to optimize performance and bandwidth util">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-16T17:40:29.000Z">
+<meta property="article:modified_time" content="2023-01-16T17:40:29.000Z">
 <meta property="article:author" content="Xiaoyuan Jin">
+<meta property="article:tag" content="PaperReview">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2021/08/">
+<link rel="canonical" href="http://yoursite.com/2023/01/16/3-1-rlmc/">
 
 
 <script id="page-configurations">
@@ -38,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Fishiu</title>
+  <title>Paper Review - RLMC | Fishiu</title>
   
 
 
@@ -156,50 +159,125 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 18 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/01/16/3-1-rlmc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xiaoyuan Jin">
+      <meta itemprop="description" content="Hope you find something interesting here.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fishiu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Paper Review - RLMC
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-01-17 01:40:29" itemprop="dateCreated datePublished" datetime="2023-01-17T01:40:29+08:00">2023-01-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A7%91%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">科研</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p><a target="_blank" rel="noopener" href="https://safari.ethz.ch/review/architecture22/doc.php/comparch-fs22-paper46.pdf">Self-Optimizing Memory Controllers: A Reinforcement Learning Approach 🔗</a></p>
+<blockquote>
+<p>The authors propose a new memory controller design that uses reinforcement learning to optimize performance and bandwidth utilization in chip multiprocessors. The controller adapts its scheduling policies on the fly to improve performance and results show significant improvement compared to current state-of-the-art controllers.</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="strengths">Strengths</h2>
+<ul>
+<li>The introduction is very attractive. It starts with the story of Moore’s Law, which is convincing.</li>
+<li>The core of this work is reinforcement learning. The RL-based memory controller takes as input parts of the system state and considers the long-term performance impact of each action it can take.</li>
+<li>I really enjoy the 6.2 section: applications of RL in computer systems, as I am fond of machine leanring. I look forward to more machine learning applications, especially non-RL methods (for variability).</li>
+</ul>
+<h2 id="weaknesses">Weaknesses</h2>
+<ul>
+<li>Security problem should not be ignored especially in such a special case: applying machine leanring into hardware structures. The unexplainability, unpredictability lay the memory controller in a unsafe situation where the attacker may decryte the training methods and apply advesarial attacks.</li>
+<li>The graphs in this paper is not very fancy, which might hurt the readability.</li>
+<li>I am interested of the hardware implementation part, but unfortunately, it is not very detailed. It would be better to publish the source code.</li>
+</ul>
+<h2 id="can-you-do-better">Can you do better?</h2>
+<ul>
+<li>As for the secuity problem, I would do some attack to this controller and report the safety situation. Reverse engineering is always with a lot of fun.</li>
+</ul>
+<h2 id="takeaways">Takeaways</h2>
+<p>Machine learning always seems unexplainable, unpredictable and takes numerous hardware or software resouce. But this work really shocked me and taught me that nothing is impossible even embedding an RL algorithm into a memory controller.</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-23T12:09:00+08:00"
-              content="2021-08-23">
-          08-23
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/PaperReview/" rel="tag"># PaperReview</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/23/karabiner/" itemprop="url">
-            <span itemprop="name">Karabiner Demo Tutorial</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/01/16/2-4-raidr/" rel="prev" title="Paper Review - RAIDR">
+      <i class="fa fa-chevron-left"></i> Paper Review - RAIDR
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -252,6 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#strengths"><span class="nav-number">1.</span> <span class="nav-text">Strengths</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weaknesses"><span class="nav-number">2.</span> <span class="nav-text">Weaknesses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#can-you-do-better"><span class="nav-number">3.</span> <span class="nav-text">Can you do better?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeaways"><span class="nav-number">4.</span> <span class="nav-text">Takeaways</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
