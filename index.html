@@ -423,65 +423,14 @@
 <blockquote>
 <p>The authors propose architectural enhancements to make Phase Change Memory (PCM) competitive with DRAM as a memory scaling alternative. The enhancements address limitations such as long latencies, high energy writes, and finite endurance. These enhancements result in significant improvements in performance and endurance.</p>
 </blockquote>
-<h2 id="contents">Contents</h2>
-<ul>
-<li>Intro</li>
-<li>PCM tech
-<ul>
-<li>Memo cells</li>
-<li>writes</li>
-<li>write endurance</li>
-<li>reads</li>
-<li>process scaling</li>
-<li>array architecture</li>
-</ul></li>
-<li>baseline pcm/dram comparison
-<ul>
-<li>experimental methodology
-<ul>
-<li>delay and timing</li>
-<li>energy</li>
-</ul></li>
-<li>evaluation: baseline</li>
-</ul></li>
-<li>buffer organization
-<ul>
-<li>area and density analysis</li>
-<li>buffer design space</li>
-<li>evaluation: buffer organization</li>
-<li>evaluation: scaling comparison</li>
-</ul></li>
-<li>partial writes
-<ul>
-<li>mechanism</li>
-<li>endurance</li>
-<li>evaluation: partial writes</li>
-</ul></li>
-</ul>
-<h2 id="strengths">Strengths</h2>
-<ul>
-<li>The topic of this paper is rather grand as PCM is a new technoloty that can replace DRAM, and in other word, must be very complicated with lots of details. However the authors made it by grabbing two new technologies to architect PCM.</li>
-<li>The first technology is buffer design: it mainly focus on the spactial problem of a memory chip. The author first proposed precise formulations to characterize the area of array, sense amplifier, the latch, and the decoder. The area analysis serves as a foundation for buffer organization designing.</li>
-<li>The second technology is partial writes, which is intended to solve the endurance problem of PCM. The author first explain the mechanism of partial writes at two granularities: cache (lowest level) line size and word size. The evaluation presents both the performance and overhead and proved this mechanism to be practical.</li>
-</ul>
-<h2 id="weaknesses">Weaknesses</h2>
-<ul>
-<li>I think the weaknesses of this work is mainly about story telling. For instance, at the begenning, this paper did not clearly point out the contributions of this work. As mentioned in You and Your Research, we must need to learn how to sell our work, clearly and loudly.</li>
-<li>Another problem is in comparison. The core of this paper is to compare (newly architected) PCM with DRAM. However, the bottom mechanism of the two product are totally different so the baseline should be a SOTA DRAM and there should be some widely aknowledged metrics to measure the problems. I think the author need to explain this part strongly, otherwise the comparison is not convincing enough.</li>
-</ul>
-<h2 id="can-you-do-better">Can you do better?</h2>
-<ul>
-<li>I think this paper need a better name for the newly architected framework, simply PCM is not impressive.</li>
-</ul>
-<h2 id="takeaways">Takeaways</h2>
-<ul>
-<li>There are several complex formulations in this paper which is not commonly seen in architecure works. This work presents why and how to list formulations, and at the same time, the formulations are long but with good readability.</li>
-</ul>
-<h2 id="other-comments">Other comments</h2>
-<ul>
-<li>I would consider applying partial write also on DRAM, because this technology seems really good and DRAM also want a longer life. Of course I would start with research on trade off between performance and overhead.</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/01/17/3-2-pcm/" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
