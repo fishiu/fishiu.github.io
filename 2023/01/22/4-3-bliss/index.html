@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Hope you find something interesting here.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fishiu">
-<meta property="og:url" content="http://yoursite.com/categories/Geek/%E5%B7%A5%E5%85%B7/index.html">
+  <meta name="description" content="BLISS: Balancing Performance, Fairness and Complexity in Memory Access Scheduling 🔗  This paper introduces a new memory scheduler, called Blacklisting Memory Scheduler (BLISS), which separates applic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Paper Review - BLISS">
+<meta property="og:url" content="http://yoursite.com/2023/01/22/4-3-bliss/index.html">
 <meta property="og:site_name" content="Fishiu">
-<meta property="og:description" content="Hope you find something interesting here.">
+<meta property="og:description" content="BLISS: Balancing Performance, Fairness and Complexity in Memory Access Scheduling 🔗  This paper introduces a new memory scheduler, called Blacklisting Memory Scheduler (BLISS), which separates applic">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-22T09:29:00.000Z">
+<meta property="article:modified_time" content="2023-01-22T09:29:00.000Z">
 <meta property="article:author" content="Xiaoyuan Jin">
+<meta property="article:tag" content="PaperReview">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/categories/Geek/%E5%B7%A5%E5%85%B7/">
+<link rel="canonical" href="http://yoursite.com/2023/01/22/4-3-bliss/">
 
 
 <script id="page-configurations">
@@ -38,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: 工具 | Fishiu</title>
+  <title>Paper Review - BLISS | Fishiu</title>
   
 
 
@@ -156,137 +159,132 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">工具
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/01/22/4-3-bliss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="Xiaoyuan Jin">
+      <meta itemprop="description" content="Hope you find something interesting here.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fishiu">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Paper Review - BLISS
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-01-22 17:29:00" itemprop="dateCreated datePublished" datetime="2023-01-22T17:29:00+08:00">2023-01-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A7%91%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">科研</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-01T02:24:50+08:00"
-              content="2022-04-01">
-          04-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/03/31/nobelium/" itemprop="url">
-            <span itemprop="name">Tips When Deploying Your Notion Blogs to Vercel with Nobelium</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-03-27T14:00:00+08:00"
-              content="2022-03-27">
-          03-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/03/27/technical-share/" itemprop="url">
-            <span itemprop="name">Techniques All You Need</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-12-23T19:33:11+08:00"
-              content="2021-12-23">
-          12-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/12/23/git-tiny-tutorial/" itemprop="url">
-            <span itemprop="name">Tiny Tutorial for Git</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-23T12:09:00+08:00"
-              content="2021-08-23">
-          08-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/23/karabiner/" itemprop="url">
-            <span itemprop="name">Karabiner Demo Tutorial</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-17T13:21:00+08:00"
-              content="2020-08-17">
-          08-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/17/toefl-spider/" itemprop="url">
-            <span itemprop="name">TOEFL Available Seats Auto Query with JavaScript</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <p><a target="_blank" rel="noopener" href="https://people.inf.ethz.ch/omutlu/pub/bliss-memory-scheduler_ieee-tpds16.pdf">BLISS: Balancing Performance, Fairness and Complexity in Memory Access Scheduling 🔗</a></p>
+<blockquote>
+<p>This paper introduces a new memory scheduler, called Blacklisting Memory Scheduler (BLISS), which separates applications into two groups, one containing applications that are vulnerable to interference and another containing applications that cause interference. It aims to achieve high system performance and fairness with low hardware cost and complexity. The design of BLISS is based on two observations, it is sufficient to separate applications into two groups instead of ranking them individually, and this grouping can be efficiently performed by counting the number of consecutive requests served from each application. The evaluation shows that BLISS performs better than previous schedulers while reducing the hardware complexity.</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="strengths">Strengths</h2>
+<ul>
+<li>BLISS is very simple but has great power in raising the fairness of a memory system. It mainly credits to the two critical observations:
+<ul>
+<li>Ranking is unnecessary and simply binary grouping is sufficient to separate applications with different characteristics in memory requesting.</li>
+<li>The vulnerability of an application can be estimated by counting the consecutive requests served from an application in certain time interval.</li>
+</ul></li>
+<li>BLISS place the importance of designing memory scheduler on performance, complexity(cost) and fairness. This work selected convincing metrics to measure these aspects of memory schedulers. It draws the triangle graph twice to show the full range of capabilities of BLISS with contrast to the previous memory schedulers.</li>
+</ul>
+<h2 id="weaknesses">Weaknesses</h2>
+<ul>
+<li>In the contributions part, the author mentioned that BLISS outperformed the other mechanisms in the trade-offs between the triangle-metrics. Though BLISS is almost the best in all the three metrics, it is not rigorous evaluation as the triangles representing different mechanisms are not quantified to a comparable number.</li>
+</ul>
+<h2 id="can-you-do-better">Can you do better？</h2>
+<ul>
+<li>Following the problem mentioned in weaknesses, I naturally start wondering why this work choose the triangle metrics of performance, fairness, simplicity. Though the three metrics are important, but they are not discussed in a specific paper which proved that they can completely represents the overall ability of the memory scheduler. I might discover more metrics such as energy cost and security coefficient.</li>
+</ul>
+<h2 id="takeaways">Takeaways</h2>
+<ul>
+<li>The idea of binary grouping (or more generally speaking, bucketing) rather than ranking is the key component that BLISS outperforms the other mechanisms.</li>
+</ul>
+<h2 id="other-comment">Other Comment</h2>
+<ul>
+<li>I start wondering what is the key characteristics of memory scheduling? Some times it really looks like a common resource scheduling problem. And we may combine these topics with researches in other fields, such as traffic or energy distribution.</li>
+</ul>
 
     </div>
-  </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/PaperReview/" rel="tag"># PaperReview</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/01/20/4-4-fst/" rel="prev" title="Paper Review - FST">
+      <i class="fa fa-chevron-left"></i> Paper Review - FST
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
@@ -339,6 +337,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#strengths"><span class="nav-number">1.</span> <span class="nav-text">Strengths</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weaknesses"><span class="nav-number">2.</span> <span class="nav-text">Weaknesses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#can-you-do-better"><span class="nav-number">3.</span> <span class="nav-text">Can you do better？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#takeaways"><span class="nav-number">4.</span> <span class="nav-text">Takeaways</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-comment"><span class="nav-number">5.</span> <span class="nav-text">Other Comment</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
